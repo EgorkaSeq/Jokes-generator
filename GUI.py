@@ -45,8 +45,8 @@ class JokeApp:
         self.text_widget.insert(tk.END, joke)
 
     def show_meme(self):
-        # Specify the path to the folder containing memes
-        meme_folder = "memes"  # Replace with your folder path
+        
+        meme_folder = "memes"  
         try:
             meme_files = [file for file in os.listdir(meme_folder) if file.endswith(('.png', '.jpg', '.jpeg'))]
             if not meme_files:
@@ -55,9 +55,9 @@ class JokeApp:
             random_meme = random.choice(meme_files)
             image_path = os.path.join(meme_folder, random_meme)
 
-            # Open and display the meme image
+            
             image = Image.open(image_path)
-            image = image.resize((400, 400), Image.Resampling.LANCZOS)  # Resize for consistency
+            image = image.resize((400, 400), Image.Resampling.LANCZOS)  
             photo = ImageTk.PhotoImage(image)
 
             self.image_label.configure(image=photo)
